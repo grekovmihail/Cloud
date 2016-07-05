@@ -11,6 +11,27 @@ session_start();
 </head>
 
 <body>
+<style type="text/css">
+
+
+
+
+
+
+    h3 {
+    color: black; /* Синий цвет текста */
+      padding-left: 20px;
+           margin: 15px
+    font-size: 11pt; /* Размер надписи */
+      text-decoration: none;
+        font-style: italic; /* Курсивное начертание */
+
+   }
+
+     a:hover {
+    text-decoration: underline;
+
+  </style>
 
 
 
@@ -18,8 +39,10 @@ session_start();
         $id=  $_SESSION['id'];
     echo 'id='.$id;
 
- if (empty($_SESSION['login']) or empty($_SESSION['id']))
- {
+ if (empty($_SESSION['login']) )
+
+
+     {
 
 
 echo "Вы не авторизированы  error!!!";
@@ -30,27 +53,12 @@ echo "Вы не авторизированы  error!!!";
 
 
 //код страницы
+else
 
-    else
-{
-
-
-   ?>
+          include ("menu.php");
+  ?>         <h3> <a href="red.php"> Перевозчик  </a>  <a href="red.php"> /  Грузоотправитель </a>   </h3>    
 
 
-         <div class="navbar">
-        <div class="navbar-inner">
-        <a class="brand" href="#">Лэйбл</a>
-
-        <ul class="nav nav-tabs">
-        <ul class="nav">
-        <li class="active"><a href="#">Профиль</a></li>
-        <li><a href="#">Новые перевозки</a></li>
-        <li><a href="#">Новые перевозчики</a></li>
-        <li ><a href="logout.php" align=right>Выход</a></li>
-        </ul>
-        </div>
-        </div>
 
 
  <!--       <?php
@@ -146,9 +154,13 @@ while($row=mysql_fetch_array($result))
 
 
 
-    <form action="save1.php" method="post">
+    <form action="save2.php" method="post">
 <!--**** save_user.php - это адрес обработчика. То есть, после нажатия на кнопку "Зарегистрироваться",
 данные из полей отправятся на страничку save_user.php методом "post" ***** -->
+  <p>
+    <label>Грузоотправитель<br></label>
+
+  </p>
   <p>
     <label>Имя:*<br></label>
     <input name="name" type="text" size="150" maxlength="1500">
@@ -163,10 +175,7 @@ while($row=mysql_fetch_array($result))
     <label>Телефон: <br></label>
     <input name="telephone" type="text" size="15" maxlength="15">
   </p>
-    <p>
-    <label>Типы грузов: <br></label>
-    <input name="type " type="text" size="15" maxlength="15">
-  </p>
+
 
 
 
@@ -209,12 +218,7 @@ while($row=mysql_fetch_array($result))
 
 
   </br>
-        <p align=center>
-<button class="btn btn-large btn-primary" type="button">Оставить заявку как грузоотправитель</button>
-<button class="btn btn-large" type="button">Оставить заявку как перевозчик</button>
-</p>
-
-
+         <
 
 
 
@@ -232,12 +236,7 @@ while($row=mysql_fetch_array($result))
 <script src="js/bootstrap.min.js"></script>
 
 
-       <?php
 
-}
-
-
-?>
 
 
 </body>

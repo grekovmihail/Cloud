@@ -1,0 +1,11 @@
+CREATE TABLE  `prof2` (
+ `id` INT NOT NULL AUTO_INCREMENT ,
+ `name` VARCHAR( 20 ) ,
+ `mesto` VARCHAR( 35 ) ,
+ `email` VARCHAR( 50 )  ,
+`type` VARCHAR( 50 )  ,
+ `telephone` VARCHAR( 32 )  ,
+ `about` VARCHAR( 32 ) ,
+ 
+PRIMARY KEY (  `id` )
+);

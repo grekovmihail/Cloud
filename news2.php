@@ -6,10 +6,9 @@ session_start();
  <html lang="en">
 
 <head>
-  <title>Профиль</title>
+  <title>Новости</title>
    <link href="bootstrap.min.css" rel="stylesheet">
-   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 </head>
 
 <body>
@@ -35,7 +34,7 @@ echo "Вы не авторизированы  error!!!";
 
     else
 {
-
+                include "menu.php";
 
 
 
@@ -43,19 +42,7 @@ echo "Вы не авторизированы  error!!!";
 
 
    ?>
-         <div class="navbar">
-        <div class="navbar-inner">
-        <a class="brand" href="#">Лэйбл</a>
 
-        <ul class="nav nav-tabs">
-        <ul class="nav">
-        <li class="active"><a href="#">Профиль</a></li>
-        <li><a href="#">Новые перевозки</a></li>
-        <li><a href="#">Новые перевозчики</a></li>
-        <li ><a href="logout.php" align=right>Выход</a></li>
-        </ul>
-        </div>
-        </div>
 
 <?php
  /*
@@ -92,16 +79,16 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 
                                   $i=  $_SESSION['id'];
 
-    $result = mysql_query("SELECT * FROM prof where WHERE `id`=2",$db);
+  //  $result = mysql_query("SELECT * FROM prof where WHERE `id`=2",$db);
   //  $row=mysql_fetch_array($result);
-        echo     $row['id'];
+    //    echo     $row['id'];
 
-      echo     $row['name'];
-
-
+   //   echo     $row['name'];
 
 
-      $query = sprintf("SELECT * FROM zaipere");
+
+
+      $query = sprintf("SELECT * FROM zai2 ORDER BY vre DESC ");
   //  mysql_real_escape_string($firstname),
   //  mysql_real_escape_string($lastname));
 
@@ -116,36 +103,6 @@ if (!$result) {
     die($message);
 }
 
-// Используем результат
-// Попытка напечатать $result не выведет информацию, которая в нем хранится
-// Необходимо использовать какую-либо mysql-функцию, работающую с результатом запроса
-// См. также mysql_result(), mysql_fetch_array(), mysql_fetch_row() и т.п.
-
-
-
-
-
-// берем результаты из каждой строки
-
-
- /*
-while($row=mysql_fetch_array($result))
-{ // выводим данные
-//$row['prim'] =iconv( 'UTF-8', 'Windows-1251', $row ['prim']);
-//$row['adres','finish', 'FIO', 'contacts','prim'] =iconv( 'UTF-8', 'Windows-1251', $row );
-
-	$i++;
-  echo   '<p>Запись id='.$i.'. Адрес: '.iconv( 'UTF-8', 'Windows-1251', $row['adres']). ' Точка назначения '
-.iconv( 'UTF-8', 'Windows-1251', $row['finish']).
- '. Имя  '.iconv( 'UTF-8', 'Windows-1251', $row['FIO']).  '. Контакты '.iconv( 'UTF-8', 'Windows-1251', $row['contacts']).
- '. Примечания ' .iconv( 'UTF-8', 'Windows-1251', $row['prim']).   '</p>';
-
-   */
-
-//}
-
-
-
 
  ?>
 
@@ -153,53 +110,58 @@ while($row=mysql_fetch_array($result))
         <table > <tr >  <td width=3%></td>
             <td  width=38% valign="top" >
 
- <img src="av.jpg" alt="Smiley face">
-
-
-
-
           </td>
                   <td width=2%></td>
    <td  width=42%  valign="top" >
  <div class="he2">
          <p></p>        </div>
 
-<h3 > Гомер Джэй Симпсон
-<?php     while ($row = mysql_fetch_assoc($result)) {
 
-     echo
-     $row['login'] ;
+<?php     while ($row = mysql_fetch_assoc($result)) {   ?>
+ <h3 >
+    <HR WIDTH="80%" SIZE="3">
 
+  <?php
+
+  $login=$row['login'];
+      $d=$row['d'];
+
+
+ echo "
+                <a href='http://cloud-logistics.ru/id$d'> $login  </a>     "   ;
        ?>
        </h3>
 <p>
-
-     <li>Перевозчик        </li>
- <li> Тип перевозок <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['type'])    ;
+  <h5>
+     <p>Перевозчик        </p>
+ <p> Тип перевозок: <?php
+     echo     $row['type']   ;
 
        ?>
-       </li>
- <li> email <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['date']) ;
+      </p>
+ <p> Сроки: <?php
+     echo    $row['date'] ;
 
-       ?>   </li>    <li>
- Телефон: <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['telephone'])  ;
+       ?>  </p>   <p>
+ Район: <?php
+     echo   $row['mesto'] ;
 
-       ?> </li>
- 	<li> Московская область <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['raion'])   ;
-
-       ?> </li>
+       ?> </p>
 
 
-     	<li> Подробнее <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['about'])  ;
-          }
-       ?> </li>
 
+      <p> Подробнее: <?php
+     echo  $row['about'] ;
+        
+       ?> </p>
 
+         <p>  <?php
+     echo     $row['vre'] ;
+                }
+       ?>   </p>
+
+         </h5>
+          </br>
 
             </td>
              <td width=3% ></td>
@@ -209,25 +171,16 @@ while($row=mysql_fetch_array($result))
 
 
   </br>
-  <!--      <p align=center>
+  <!--
 <button class="btn btn-large btn-primary" type="button">Оставить заявку как грузоотправитель</button>
 <button class="btn btn-large" type="button">Оставить заявку как перевозчик</button>
-</p>     -->
+     -->
 
-
+         <p align=center>
      <a href="zai.php"><button class="btn btn-large btn-primary" type="button">Оставить заявку как грузоотправитель</button>   </a>
 <a href="zai2.php"><button class="btn btn-large" type="button">Оставить заявку как перевозчик</button>               </a>
 
-
-
-
-
-
-
-
-
-
-
+      </p>
 
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -237,9 +190,7 @@ while($row=mysql_fetch_array($result))
 
 }
 
-
 ?>
-
 
 </body>
 

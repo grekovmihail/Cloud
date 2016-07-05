@@ -3,13 +3,11 @@
 session_start();
 ?>
 <html>
- <html lang="en">
 
 <head>
   <title>Профиль</title>
    <link href="bootstrap.min.css" rel="stylesheet">
-   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+   	   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 </head>
 
 <body>
@@ -43,21 +41,10 @@ echo "Вы не авторизированы  error!!!";
 
 
    ?>
-         <div class="navbar">
-        <div class="navbar-inner">
-        <a class="brand" href="#">Лэйбл</a>
 
-        <ul class="nav nav-tabs">
-        <ul class="nav">
-        <li class="active"><a href="#">Профиль</a></li>
-        <li><a href="#">Новые перевозки</a></li>
-        <li><a href="#">Новые перевозчики</a></li>
-        <li ><a href="logout.php" align=right>Выход</a></li>
-        </ul>
-        </div>
-        </div>
 
 <?php
+     include "menu.php";
  /*
 
    // ваш адрес где находится, хостится ваша база данных
@@ -92,7 +79,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 
                                   $i=  $_SESSION['id'];
 
-    $result = mysql_query("SELECT * FROM prof where WHERE `id`=2",$db);
+ //   $result = mysql_query("SELECT * FROM prof where WHERE `id`=2",$db);
   //  $row=mysql_fetch_array($result);
         echo     $row['id'];
 
@@ -101,7 +88,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 
 
 
-      $query = sprintf("SELECT * FROM prof
+      $query = sprintf("SELECT * FROM pro
     WHERE id=$id");
   //  mysql_real_escape_string($firstname),
   //  mysql_real_escape_string($lastname));
@@ -165,7 +152,7 @@ while($row=mysql_fetch_array($result))
  <div class="he2">
          <p></p>        </div>
 
-<h3 > Гомер Джэй Симпсон
+<h3 >
 <?php     while ($row = mysql_fetch_assoc($result)) {
 
      echo
@@ -175,30 +162,142 @@ while($row=mysql_fetch_array($result))
        </h3>
 <p>
 
-     <li>Перевозчик        </li>
- <li> Тип перевозок <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['type'])    ;
+      <p>  Перевозчик       </p>
+
+
+ <p>  email: <?php
+     echo     $row['email'] ;
+
+       ?>   </p>
+        <p>  Место <?php
+     echo     $row['mesto']   ;
+
+       ?> </p>
+
+
+       <p>
+ Тип перевозок: <?php
+     echo    $row['type']  ;
+
+       ?> </p>
+
+        <p>
+Тип грузов: <?php
+     echo    $row['gruz']  ;
+
+       ?> </p>
+
+
+       <p>
+Цена перевозки: <?php
+     echo    $row['cena']  ;
+
+       ?> </p>
+
+
+       <p>
+ Города перевозок: <?php
+     echo    $row['goroda']  ;
+
+       ?> </p>
+
+
+      <p>
+ Телефон: <?php
+     echo    $row['telephone']  ;
+
+       ?> </p>
+
+
+               <p>
+X: <?php
+     echo    $row['X']  ;
+
+       ?> </p>      <p>
+ Y: <?php
+     echo    $row['Y']  ;
+
+       ?> </p>
+
+
+
+
+
+
+
+
+
+
+
+        <p>   <?php
+     echo    $row['about'] ;
+          }
+       ?> </p>
+
+
+
+
+          <p>  Юр. данные
+     <p> Юр. адрес:
+
+
+
+
+
+    <?php
+     echo    $row['uadres']  ;
 
        ?>
-       </li>
- <li> email <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['email']) ;
-
-       ?>   </li>    <li>
- Телефон: <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['telephone'])  ;
-
-       ?> </li>
- 	<li> Московская область <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['mesto'])   ;
-
-       ?> </li>
 
 
-     	<li> Подробнее <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['about'])  ;
-          }
-       ?> </li>
+   <p> Наименование:
+  <?   echo    $row['uname']  ;
+
+       ?>
+             </p>
+
+      <p>
+ ИНН: <?php
+     echo    $row['inn']  ;
+
+       ?>
+
+        </p>
+
+     <p>
+ ОГРН: <?php
+     echo    $row['ogrn']  ;
+
+       ?> </p>
+
+
+
+       <p>
+ ОКПО: <?php
+     echo    $row['okpo']  ;
+
+       ?> </p>
+
+       <p>
+ КПП:
+     <?php
+     echo    $row['kpp']  ;
+
+       ?>
+  </p><p>
+Основной ОКВЭД:
+      <?php
+     echo    $row['oo']  ;
+
+       ?>
+
+  </p>
+
+
+
+
+
+
 
 
 
@@ -216,8 +315,10 @@ while($row=mysql_fetch_array($result))
 </p>     -->
 
 
-     <a href="zai.php"><button class="btn btn-large btn-primary" type="button">Оставить заявку как грузоотправитель</button>   </a>
+     <p align=center>
+<a href="zai.php"><button class="btn btn-large btn-primary" type="button">Оставить заявку как грузоотправитель</button>   </a>
 <a href="zai2.php"><button class="btn btn-large" type="button">Оставить заявку как перевозчик</button>               </a>
+</p>
 
 
 

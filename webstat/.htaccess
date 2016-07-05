@@ -1,3 +1,17 @@
 DirectoryIndex index.php
 
 AddType application/x-httpd-php .html .htm .php
+
+                                                        RewriteEngine On
+RewriteRule ^id([0-9]+)$ profprosm.php [L]
+ RewriteEngine On
+RewriteRule ^z([0-9]+)$ zp.php [L]
+
+
+
+                                                        RewriteEngine On
+RewriteRule ^m([0-9]+)$ vhprosm.php [L]
+
+
+
+  

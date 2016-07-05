@@ -1,0 +1,11 @@
+CREATE TABLE  `zaipere` (
+
+ `login` VARCHAR( 20 ) ,
+ `date` VARCHAR( 35 ) ,
+ `raion` VARCHAR( 50 )  ,
+`type` VARCHAR( 50 )  ,
+ 
+ `about` VARCHAR( 32 ) 
+ 
+
+);

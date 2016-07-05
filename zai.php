@@ -5,7 +5,7 @@ session_start();
 <html>
 
 <head>
-  <title>Профиль</title>
+  <title>Заявка</title>
    <link href="bootstrap.min.css" rel="stylesheet">
          <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 </head>
@@ -33,87 +33,9 @@ echo "Вы не авторизированы  error!!!";
 
     else
 {
-
+            include "menu.php";
 
    ?>
-
-
-         <div class="navbar">
-        <div class="navbar-inner">
-        <a class="brand" href="#">Лэйбл</a>
-
-        <ul class="nav nav-tabs">
-        <ul class="nav">
-        <li class="active"><a href="#">Профиль</a></li>
-        <li><a href="#">Новые перевозки</a></li>
-        <li><a href="#">Новые перевозчики</a></li>
-        <li ><a href="logout.php" align=right>Выход</a></li>
-        </ul>
-        </div>
-        </div>
-
-
- <!--       <?php
-         /*
-
-   // ваш адрес где находится, хостится ваша база данных
-$sdd_db_host='localhost';
-// Имя базы данных с которой вы хотите работать, так как их может быть множество
-$sdd_db_name='cl';
-// логин доступ к базе данных
-$sdd_db_user='root';
-// пароль доступа к базе данных
-$sdd_db_pass='45091847';
-
-
-
-// устанавливаем связь с сервером
-@mysql_connect($sdd_db_host,$sdd_db_user,$sdd_db_pass);
-
-
-//mysql_query("SET NAMES 'cp1251'");
-mysql_query("SET NAMES 'utf8';");
-mysql_query("SET CHARACTER SET 'utf8';");
-mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
-
-
-
-// переключаемся на нужную нам базу данных
-@mysql_select_db($sdd_db_name);
-// делаем выборку из таблицы
-
-   mysql_query("SET NAMES 'utf8'");
-
-
-$result=mysql_query('SELECT * FROM `users`');
-// берем результаты из каждой строки
-
-
-
-while($row=mysql_fetch_array($result))
-{ // выводим данные
-//$row['prim'] =iconv( 'UTF-8', 'Windows-1251', $row ['prim']);
-//$row['adres','finish', 'FIO', 'contacts','prim'] =iconv( 'UTF-8', 'Windows-1251', $row );
-
-	$i++;
-   /*echo   '<p>Запись id='.$i.'. Адрес: '.iconv( 'UTF-8', 'Windows-1251', $row['adres']). ' Точка назначения '
-.iconv( 'UTF-8', 'Windows-1251', $row['finish']).
- '. Имя  '.iconv( 'UTF-8', 'Windows-1251', $row['FIO']).  '. Контакты '.iconv( 'UTF-8', 'Windows-1251', $row['contacts']).
- '. Примечания ' .iconv( 'UTF-8', 'Windows-1251', $row['prim']).   '</p>';
-
-
-
-}
-
-     */
-
-
- ?>
-        -->
-
-
-
-
 
 
 
@@ -121,27 +43,12 @@ while($row=mysql_fetch_array($result))
         <table > <tr >  <td width=3%></td>
             <td  width=38% valign="top" >
 
- <img src="av.jpg" alt="Smiley face">
-
-
-
-
           </td>
                   <td width=2%></td>
    <td  width=42%  valign="top" >
  <div class="he2">
          <p></p>        </div>
-   <!--
-<h3 > Гомер Джэй Симпсон</h3>
-<p>
 
-     <li>Перевозчик  </li>
- <li> Легковые,грузовые перевозки  </li>
- 	<li> Московская область  </li>
-
-
-
-      -->
 
 
 
@@ -151,21 +58,21 @@ while($row=mysql_fetch_array($result))
 данные из полей отправятся на страничку save_user.php методом "post" ***** -->
   <p>
     <label>Сроки:*<br></label>
-    <input name="date" type="text" size="150" maxlength="1500">
+    <input name="date" type="textarea" size="150" maxlength="1500">
   </p>
 
     <p>
     <label>Откуда:*<br></label>
-    <input name="out" type="text" size="15" maxlength="15">
+    <input name="out" type="textarea" size="150" maxlength="1500">
   </p>
 <!--**** В текстовое поле (name="login" type="text") пользователь вводит свой логин ***** -->
   <p>
     <label>Куда:* <br></label>
-    <input name="in" type="text" size="15" maxlength="15">
+    <input name="in" type="textarea" size="150" maxlength="1500">
   </p>
     <p>
     <label>Типы грузов: <br></label>
-    <input name="type " type="text" size="15" maxlength="15">
+    <input name="type" type="textarea" size="150" maxlength="1500">
   </p>
 
 
@@ -175,7 +82,7 @@ while($row=mysql_fetch_array($result))
 
       <p>
     <label>O:<br></label>
-    <input name="about" type="text" size="15" maxlength="15">
+    <input name="about" type="textarea" size="150" maxlength="1500">
   </p>
 <!--**** В поле для паролей (name="password" type="password") пользователь вводит свой пароль ***** -->
 <p>

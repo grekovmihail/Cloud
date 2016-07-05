@@ -61,15 +61,15 @@
 
 
 
-  <p   align=right>   <a href="reg.php" align=right>Регистрация</a>
+  <p   align=right> <a href="rp2.php" align=right>Поиск</a>   <a href="reg.php" align=right>Регистрация</a>
         <a href="login.php">Выполнить вход</a>     </p>
 
 
                     </section>
 
 
-   <table align=center width=50% >
-  <tr>    <td  height="100px" width="300px">
+   <table align=center  >
+  <tr>    <td >
 	<div class="container">
 
 <!-- =======================================
@@ -85,12 +85,12 @@ THE ACTUAL ORBIT SLIDER CONTENT
 /	   		<a href=""><img src="CL.jpg" /></a>
 			<img src="CL.jpg" data-caption="#htmlCaption" />  -->
 
-		<img src="1.jpg" width=1200px />
-			<img src="2.jpg" width=1200px />
-			<img src="3.jpg"width=1200px />
-			<img src="4.jpg" width=1200px/>
-			<img src="5.jpg" width=1200px />
-<img src="6.jpg"  width=1200px/>
+		<img src="1.JPG" width=900px />
+			<img src="2.JPG" width=900px />
+			<img src="3.JPG"width=900px />
+			<img src="4.JPG" width=900px/>
+			<img src="5.jpg" width=900px />
+<img src="6.JPG"  width=900px/>
 
            </td>
 
@@ -98,12 +98,10 @@ THE ACTUAL ORBIT SLIDER CONTENT
 
   </table>
 
-
+         </div>
 		</div>
 		<!-- Captions for Orbit -->
-		<span class="orbit-caption" id="htmlCaption">
-        <strong>I'm A Badass Caption:</strong> I can haz <a href="#">links</a>,
-         <em>style</em> or anything that is valid markup :)</span>
+
 
   <table align=center >
   <tr>
@@ -111,14 +109,14 @@ THE ACTUAL ORBIT SLIDER CONTENT
   <td> <a href="nas.html" class="osx1" >    О нас   </a></td>
  <td> <a href="#" class="osx"> Контакты </a>    </td>
   <!--  <td><a href="Nas.html">   Контакты   </a></td>  -->
-      <td><a href="Nas.html">   Блоги   </a></td>
-      <td><a href="news.php">   Новости   </a></td>
+      <td><a href="http://cloudlog.livejournal.com/">   Блоги   </a></td>
+  <!--    <td><a href="admin/index.php">   Новости   </a></td>   -->
 
   </tr>
 
   </table>
 
-     </div>
+
 
      <!-- контакты -->
 
@@ -167,10 +165,16 @@ THE ACTUAL ORBIT SLIDER CONTENT
 
       </div>         </div>    </div>    </div>    </div>
 
+<!-- -----------------------------------------------------------------------------------------------           ---->
 
 
 
 
+
+
+
+
+<!-- -----------------------------------------------------------------------------------------------           ---->
 
 
 </body>

@@ -3,18 +3,14 @@
 session_start();
 ?>
 <html>
- <html lang="en">
 
 <head>
   <title>Профиль</title>
    <link href="bootstrap.min.css" rel="stylesheet">
-   	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+   	   <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
 </head>
 
 <body>
-
-
 
   <? echo "Вы вошли на сайт, как ".$_SESSION['login'];
         $id=  $_SESSION['id'];
@@ -23,10 +19,8 @@ session_start();
  if (empty($_SESSION['login']) or empty($_SESSION['id']))
  {
 
-
 echo "Вы не авторизированы  error!!!";
 }
-
 
 //{
 
@@ -38,26 +32,8 @@ echo "Вы не авторизированы  error!!!";
 
 
 
+     include "menu.php";
 
-
-
-
-   ?>
-         <div class="navbar">
-        <div class="navbar-inner">
-        <a class="brand" href="#">Лэйбл</a>
-
-        <ul class="nav nav-tabs">
-        <ul class="nav">
-        <li class="active"><a href="#">Профиль</a></li>
-        <li><a href="#">Новые перевозки</a></li>
-        <li><a href="#">Новые перевозчики</a></li>
-        <li ><a href="logout.php" align=right>Выход</a></li>
-        </ul>
-        </div>
-        </div>
-
-<?php
  /*
 
    // ваш адрес где находится, хостится ваша база данных
@@ -92,7 +68,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 
                                   $i=  $_SESSION['id'];
 
-    $result = mysql_query("SELECT * FROM prof2 where WHERE `id`=2",$db);
+    $result = mysql_query("SELECT * FROM prof2 where WHERE `id`=$i",$db);
   //  $row=mysql_fetch_array($result);
         echo     $row['id'];
 
@@ -101,7 +77,7 @@ mysql_query("SET SESSION collation_connection = 'utf8_general_ci';");
 
 
 
-      $query = sprintf("SELECT * FROM prof
+      $query = sprintf("SELECT * FROM prof2
     WHERE id=$id");
   //  mysql_real_escape_string($firstname),
   //  mysql_real_escape_string($lastname));
@@ -117,33 +93,6 @@ if (!$result) {
     die($message);
 }
 
-// Используем результат
-// Попытка напечатать $result не выведет информацию, которая в нем хранится
-// Необходимо использовать какую-либо mysql-функцию, работающую с результатом запроса
-// См. также mysql_result(), mysql_fetch_array(), mysql_fetch_row() и т.п.
-
-
-
-
-
-// берем результаты из каждой строки
-
-
- /*
-while($row=mysql_fetch_array($result))
-{ // выводим данные
-//$row['prim'] =iconv( 'UTF-8', 'Windows-1251', $row ['prim']);
-//$row['adres','finish', 'FIO', 'contacts','prim'] =iconv( 'UTF-8', 'Windows-1251', $row );
-
-	$i++;
-  echo   '<p>Запись id='.$i.'. Адрес: '.iconv( 'UTF-8', 'Windows-1251', $row['adres']). ' Точка назначения '
-.iconv( 'UTF-8', 'Windows-1251', $row['finish']).
- '. Имя  '.iconv( 'UTF-8', 'Windows-1251', $row['FIO']).  '. Контакты '.iconv( 'UTF-8', 'Windows-1251', $row['contacts']).
- '. Примечания ' .iconv( 'UTF-8', 'Windows-1251', $row['prim']).   '</p>';
-
-   */
-
-//}
 
 
 
@@ -166,7 +115,7 @@ while($row=mysql_fetch_array($result))
          <p></p>        </div>
 
 <h3 >
-<?php     while ($row = mysql_fetch_assoc($result)) {
+<?php    while ($row = mysql_fetch_assoc($result)) {
 
      echo
      $row['name'] ;
@@ -177,31 +126,28 @@ while($row=mysql_fetch_array($result))
 
        <p>
 
-     <li>Грузоотправитель
-       </li>
+     Грузоотправитель
+
 <p>
 
-     <li>Тип грузов  <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['type'])    ;
 
-       ?>
        </li>
  <li> email <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['email']) ;
+     echo   $row['email'];
 
        ?>   </li>    <li>
  Телефон: <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['telephone'])  ;
+     echo   $row['telephone'];
 
        ?> </li>
- 	<li> Московская область <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['mesto'])   ;
+ 	<li> Место <?php
+     echo  $row['mesto']  ;
 
        ?> </li>
 
 
      	<li> Подробнее <?php
-     echo    iconv( 'UTF-8', 'Windows-1251', $row['about'])  ;
+     echo    $row['about'] ;
           }
        ?> </li>
 

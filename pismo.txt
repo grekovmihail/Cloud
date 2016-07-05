@@ -1,0 +1,17 @@
+CREATE TABLE  `zp` (
+ `id` INT ,
+ `name` VARCHAR( 20 ) ,
+ `Rus` VARCHAR( 35 )  ,
+ `Zg` VARCHAR( 50 ) ,
+ `viza` VARCHAR( 32 )  ,
+`pl` VARCHAR( 32 )  ,
+`t` VARCHAR( 32 )  ,
+`avia` VARCHAR( 32 )  ,
+`ex` VARCHAR( 32 )  , 
+
+`tih` VARCHAR( 32 )  ,
+`TR` VARCHAR( 32 )  ,
+`Sport` VARCHAR( 32 )  ,
+
+PRIMARY KEY (  `id` )
+);

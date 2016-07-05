@@ -1,0 +1,7 @@
+CREATE TABLE  `user` (
+ 
+ `login` VARCHAR( 20 ) NOT NULL ,
+ `password` VARCHAR( 35 ) NOT NULL ,
+ `email` VARCHAR( 50 ) NOT NULL ,
+ 
+);
