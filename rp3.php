@@ -288,7 +288,7 @@ navigator.geolocation.getCurrentPosition(function(position) {
     Расширенный поиск<br>
 
   </h2>
-  <p>
+ <!-- <p>
     Название:
     <input name="name" type="textarea" size="150" maxlength="1500">
 
@@ -318,10 +318,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
       </select>
 
 
+   -->
 
 
-
-  <!--  <input name="gruz" type="select " size="150" maxlength="15">     -->
+  <!--  <input name="gruz" type="select " size="150" maxlength="15">
 
 
 
@@ -342,6 +342,8 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 <!--**** Кнопочка (type="submit") отправляет данные на страничку save_user.php ***** -->
 </p></form>
+
+ -->    
            <HR WIDTH="100%" SIZE="3">
 
 

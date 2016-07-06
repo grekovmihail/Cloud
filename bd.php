@@ -1,4 +1,4 @@
 <?php
-$db = mysql_connect("localhost","root","45091847");
-mysql_select_db ("cl",$db);
+$db = mysql_connect("localhost","GM","K7n2glisr");
+mysql_select_db ("CL2",$db);
 ?>

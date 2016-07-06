@@ -114,9 +114,7 @@ if (!$result) {
         <li><a href="news2.php">Новые перевозчики</a></li>
 
                 <li><a href="rp2.php">Расширенный поиск</a></li>
-        <form class="navbar-search pull-left">
-  <input name="sea" input type="text" class="search-query" placeholder="Search">
-</form>
+ 
  </form>
 
 

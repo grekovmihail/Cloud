@@ -279,32 +279,10 @@ navigator.geolocation.getCurrentPosition(function(position) {
 
 
   <h2>
-    Расширенный поиск<br>
+   Разрешите браузеру использовать ваше местоположение и обновите страницу! <br>
 
   </h2>
-  <p>
-    Название:
-    <input name="name" type="textarea" size="150" maxlength="1500">
 
-   &nbsp  &nbsp  Тип перевозок:
-    <input name="email" type="textarea " size="150" maxlength="15">
-
-
-  &nbsp  &nbsp  Адрес:
-    <input name="mesto" type="textarea " size="150" maxlength="15">
-
-
-
-
-  </p>
-<!--**** В поле для паролей (name="password" type="password") пользователь вводит свой пароль ***** -->
-<p>
-<input type="checkbox" name="geo"  value="1">   искать ближайшие
-
-<input type="submit" name="submit" value="поиск">
-
-<!--**** Кнопочка (type="submit") отправляет данные на страничку save_user.php ***** -->
-</p></form>
            <HR WIDTH="100%" SIZE="3">
 
 
